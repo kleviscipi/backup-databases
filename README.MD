@@ -1,12 +1,10 @@
 
 # Script for custom backup of db
 
-
 ## Configuration
-- ```chmod +x run.sh```
-- ```chmod +x mysql.sh```
+- ```chmod +x backup.sh```
 - Create environment file for example ```.env.stage``` and set this variables:
-    - ```DRIVER``` mysql|postgres
+    - ```DRIVER```
     - ```BACKUP_DIR_PATH```
     - ```DB_HOST```
     - ```DB_USERNAME```
@@ -17,9 +15,13 @@
 
     Example Cron Job
     ```SHELL
-    0 0 * * * /run.sh stage >> /logs/backup-db.log 2>&1
+    0 0 * * * /backup.sh stage >> /logs/backup-db.log 2>&1
     ```
 
 ## TODO
-- [*] Driver mysql
-- [] Driver postgres 
+- Driver mysql
+    - [*] Export
+    - [ ] Import
+- Driver postgres
+    - [ ] Export
+    - [ ] Import
