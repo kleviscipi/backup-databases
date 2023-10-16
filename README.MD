@@ -8,6 +8,11 @@
 - Create environment file for example ```.env.stage``` and set this variables:
     - ```DRIVER``` mysql|postgres
     - ```BACKUP_DIR_PATH```
+    - ```DB_HOST```
+    - ```DB_USERNAME```
+    - ```DB_PASSWORD```
+
+
 - Set command on crontab
 
     Example Cron Job

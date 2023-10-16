@@ -17,8 +17,6 @@ CNF_CONF_FILE=$(pwd)/credentials/.m-$ENV.cnf
 
 envsubst < $(pwd)/templates/.mysql.cnf.template > $CNF_CONF_FILE
 
-BACKUP_DIR=$(pwd)/backups
-
 DB=$DB_DATABASE
 
 FILE="$DB.sql"
@@ -35,7 +33,7 @@ fi
 
 mkdir -p $BACKUP_DIR_PATH/$DATE
 
-export BACKUP_DIR
+export BACKUP_DIR_PATH
 export CNF_CONF_FILE
 export DB_HOST
 export DB
