@@ -31,15 +31,8 @@ fi
 
 mkdir -p $BACKUP_DIR_PATH/$DATE
 
-export BACKUP_DIR_PATH
-export CNF_CONF_FILE
-export DB_HOST
-export DB
-export DATE
-export FILE
-
 if [ $DRIVER == "mysql" ];then
-./mysql.sh
+mysqldump --defaults-extra-file=$CNF_CONF_FILE $DB > $BACKUP_DIR_PATH/$DATE/$FILE
 fi
 
 rm $CNF_CONF_FILE
