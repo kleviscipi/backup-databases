@@ -25,8 +25,6 @@ DAY_BACK=$((DAY-1));
 MONTH_BACK=$((MONTH-1));
 YEAR_BACK=$((YEAR-1))
 
-echo "$YEAR_BACK$MONTH_BACK$DAY_BACK"
-
 if [ -d "$BACKUP_DIR_PATH/$YEAR$MONTH$DAY_BACK" ];then
    rm -r $BACKUP_DIR_PATH/$YEAR$MONTH$DAY_BACK;
 fi
@@ -40,7 +38,7 @@ export DB
 export DATE
 export FILE
 
-if [ $DRIVER =="mysql" ];then
+if [ $DRIVER == "mysql" ];then
 ./mysql.sh
 fi
 
