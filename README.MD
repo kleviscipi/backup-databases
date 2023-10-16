@@ -20,7 +20,7 @@
 
 ## TODO
 - Driver mysql
-    - [*] Export
+    - [x] Export
     - [ ] Import
 - Driver postgres
     - [ ] Export
