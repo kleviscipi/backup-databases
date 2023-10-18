@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ENV=$1
 FILE_PATH=$2
 #local,staging,production
