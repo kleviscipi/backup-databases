@@ -25,11 +25,6 @@ export USERNAME
 CNF_CONF_FILE=$(pwd)/credentials/.m-$ENV.cnf
 envsubst < $(pwd)/templates/.$DRIVER.cnf.template > $CNF_CONF_FILE
 
-unset DATABASE
-unset HOST
-unset PORT
-unset USERNAME
-
 FILE=$IMPORT_FILE_PATH
 
 if [ -n "$FILE_PATH" ];then
@@ -44,5 +39,10 @@ elif [ $DRIVER == "postgres" ];then
 fi
 
 rm $CNF_CONF_FILE
+
+unset DATABASE
+unset HOST
+unset PORT
+unset USERNAME
 
 echo "Ending Import....."

@@ -24,12 +24,6 @@ export USERNAME
 CNF_CONF_FILE=$(pwd)/credentials/.m-$ENV.cnf
 envsubst < $(pwd)/templates/.$DRIVER.cnf.template > $CNF_CONF_FILE
 
-unset PASSWORD
-unset DATABASE
-unset HOST
-unset PORT
-unset USERNAME
-
 DB=$DATABASE
 
 FILE="$DB.sql"
@@ -46,10 +40,16 @@ mkdir -p $BACKUP_DIR_PATH/$DATE
 
 if [ $DRIVER == "mysql" ];then
 mysqldump --defaults-extra-file=$CNF_CONF_FILE $DB > $BACKUP_DIR_PATH/$DATE/$FILE
-elif [ $DRIVER == "postgres" ];then
-pg_dump --file=$BACKUP_DIR_PATH/$DATE/$FILE --dbname=$CNF_CONF_FILE
+# elif [ $DRIVER == "postgres" ];then
+# pg_dump --file=$BACKUP_DIR_PATH/$DATE/$FILE --dbname=$CNF_CONF_FILE
 fi
 
 rm $CNF_CONF_FILE
+
+unset PASSWORD
+unset DATABASE
+unset HOST
+unset PORT
+unset USERNAME
 
 echo "$DATE Ended..... ON=$ENV"
