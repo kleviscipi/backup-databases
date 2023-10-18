@@ -1,4 +1,4 @@
 [client]
-user=${DB_USERNAME}
-password=${DB_PASSWORD}
-host=${DB_HOST}
+user=${USERNAME}
+password=${PASSWORD}
+host=${HOST}

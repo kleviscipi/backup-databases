@@ -1,0 +1,5 @@
+dbname=${DATABASE}
+user=${USERNAME}
+password=${PASSWORD}
+host=${HOST}
+port=${PORT}
